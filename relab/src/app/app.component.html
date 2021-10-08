@@ -3,20 +3,38 @@
 <google-map [center]="center">  
   <!--Mettiamo un marker alle nostre coordinate-->
 
-  <map-marker [position]="position" 
+ <map-marker [position]="position" 
               [label]="label" 
               [title]="title"
               [options] = "markerOptions">
  </map-marker>
+ 
+ <map-marker [position]="position2" 
+              [label]="label" 
+              [title]="title"
+              [options] = "markerOptions2">
+ </map-marker>
+
+ <map-marker [position]="position3" 
+              [label]="label" 
+              [title]="title"
+              [options] = "markerOptions3">
+ </map-marker>
 
  <map-polygon [paths]="vertices">
-</map-polygon>
+ </map-polygon>
+
+ <map-polygon [paths]="vertices2"
+              [options] = 'circleOptions'>
+ </map-polygon>
 
   <map-circle [center]="position"
               [radius]="50"
               [options] = 'circleOptions'>
   </map-circle>
+
   <button color = "yellow" style="height:200px;width:200px"(click)="yellow()">Yellow</button>
   <button color = "red" style="height:200px;width:200px"(click)="red()">Red</button>
   <button color = "green" style="height:200px;width:200px"(click)="green()">Green</button>
+
 </google-map>
