@@ -16,6 +16,7 @@ export class AppComponent {
   position3 : any;
   label :string;
   circleOptions: any;
+  rectangleOptions: any;
   markerOptions: google.maps.MarkerOptions;
   markerOptions2: google.maps.MarkerOptions;
   markerOptions3: google.maps.MarkerOptions;
@@ -45,6 +46,7 @@ export class AppComponent {
 
 
     this.circleOptions = {fillColor : 'red'}
+    this.rectangleOptions = {fillColor : 'red'}
     this.center={lat: 45.506738, lng: 9.190766};
     this.center2={lat: 45.507238, lng: 9.191566}
     this.center3={lat: 45.505738, lng: 9.191766};
@@ -75,5 +77,14 @@ export class AppComponent {
   }
   green(){
     this.circleOptions = {fillColor : 'green'}
+  }
+  yellow2(){
+    this.rectangleOptions = {fillColor : 'yellow'}
+  }
+  red2(){
+    this.rectangleOptions = {fillColor : 'red'}
+  }
+  green2(){
+    this.rectangleOptions = {fillColor : 'green'}
   }
 }

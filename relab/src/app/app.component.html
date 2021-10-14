@@ -24,17 +24,25 @@
  <map-polygon [paths]="vertices">
  </map-polygon>
 
- <map-polygon [paths]="vertices2"
-              [options] = 'circleOptions'>
- </map-polygon>
+ <map-polygon2 [paths]="vertices2"'>
+ </map-polygon2>
 
   <map-circle [center]="position"
               [radius]="50"
               [options] = 'circleOptions'>
   </map-circle>
 
-  <button color = "yellow" style="height:200px;width:200px"(click)="yellow()">Yellow</button>
-  <button color = "red" style="height:200px;width:200px"(click)="red()">Red</button>
-  <button color = "green" style="height:200px;width:200px"(click)="green()">Green</button>
+  <map-rectangle [center]="position2"
+                 [options] = 'rectangleOptions'>
+                 
+  </map-rectangle>
+
+  <button color = "yellow" style="height:200px;width:200px"(click)="yellow()">Yellow Circle</button>
+  <button color = "red" style="height:200px;width:200px"(click)="red()">Red Circle</button>
+  <button color = "green" style="height:200px;width:200px"(click)="green()">Green Circle</button>
+
+  <button2 color = "yellow2" style="height:200px;width:200px"(click)="yellow()">Yellow Rectangle</button2>
+  <button2 color = "red2" style="height:200px;width:200px"(click)="red()">Red Rectangle</button2>
+  <button2 color = "green2" style="height:200px;width:200px"(click)="green()">Green Rectangle</button2>
 
 </google-map>
