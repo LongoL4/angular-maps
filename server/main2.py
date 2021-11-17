@@ -30,6 +30,26 @@ def get_all_addresses():
         output.append(s['INDIRIZZO'] + "|" + s['CI_VETTORE'] )
     return jsonify({'result': output})
 
+@app.route('/ci_vettore/<foglio>', methods=['GET'])
+def get_vettore(foglio):
+    mil4326WKT = mongo.db.MilWKT4326
+    output = []
+    query = {
+        "FOGLIO" : foglio
+    }
+    for s in mil4326WKT.find(query):
+        output.append({
+            "INDIRIZZO":s['INDIRIZZO'],
+            "WGS84_X":s["WGS84_X"],
+            "WGS84_Y":s["WGS84_Y"],
+            "CLASSE_ENE":s["CLASSE_ENE"],
+            "EP_H_ND":s["EP_H_ND"],
+            "FOGLIO":s["FOGLIO"],
+            "CI_VETTORE":s['CI_VETTORE']
+        }
+        )
+    return jsonify(output) #Nota che abbiamo eliminato la chiave result perchè i dati sono già formattati
+
 # Checks to see if the name of the package is the run as the main package.
 if __name__ == "__main__":
     # Runs the Flask application only if the main.py file is being run.
